@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="?" method="POST">
+        <div class="g-recaptcha" data-sitekey="6Lei7ksgAAAAAGEkmA0jJaCKotbADUR_gQ_g72NZ"></div>
+        <br/>
+        <input type="submit" value="Submit">
+      </form>
+</body>
+</html>
+<script>
+grecaptcha.ready(function() {
+    grecaptcha.execute('6Lei7ksgAAAAAGEkmA0jJaCKotbADUR_gQ_g72NZ', {action: 'demo'})
+        .then(function(token) {
+// this token will be passed together with your data
+        });
+});
+</script>
