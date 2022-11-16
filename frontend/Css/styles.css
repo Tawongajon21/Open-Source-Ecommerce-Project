@@ -1392,3 +1392,21 @@ a:hover {
 	/* end of extra pages */
 }
 /* end of min-width 1200px */
+
+
+
+.next{
+    background-color: transparent;
+    text-decoration: none;
+    padding: 0;
+    border: 0.5px solid transparent;
+    color: #0092ff;
+}
+.prev{
+    
+    background-color: transparent;
+    text-decoration: none;
+    padding: 0;
+    border: 0.5px solid transparent;
+    color: #0092ff;
+}

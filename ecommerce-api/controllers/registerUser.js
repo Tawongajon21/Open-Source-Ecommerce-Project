@@ -3,6 +3,7 @@ const bcrypt=require('bcrypt');
 const userModel= require('../models/users')
 
  exports.register= async (req,res) =>{
+    
   const {name,surname,email,password:plainTextPassword}=req.body;
   const password=await bcrypt.hash(plainTextPassword,8);
   console.log(await bcrypt.hash(plainTextPassword,8));

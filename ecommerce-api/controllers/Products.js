@@ -32,7 +32,7 @@ exports.GetProducts=async(req,res)=>{
         '<=':"$lte",
         }
         const regex= /\b(<|>|>=|=|<|<=)\b/g;
-        let filters=priceFilters.replace(regEx, (match)=>`-${operatorMap[match]}-`);
+        let filters=priceFilters.replace(regex, (match)=>`-${operatorMap[match]}-`);
         const options  = ['price'];
         filters= filters.split(',').forEach((item)=>{
             const [field,operator,value]= item.split('-');
@@ -53,7 +53,7 @@ exports.GetProduct=async (req,res)=>{
     
 
     const id=req.params.id;
-    const product=await productModel.find(queryObject);
+    const product=await productModel.findById(id);
     res.json({message:`Product ${id}`,product})
 }
 

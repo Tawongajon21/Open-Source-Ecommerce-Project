@@ -1,10 +1,10 @@
 const Order= require('../models/Order');
-exports.Order=async=(req,res)=>{
+const createOrder=async(req,res)=>{
 if (req.body.orderItems.length===0) {
     res.status(400).send('Cart Is Empty')
 }
 else{
-    const order= new Order({
+    const order=   new Order({
         orderItems:req.body.orderItems,
         shippingAddress:req.body.shippingAddress,
         paymentMethod:req.body.paymentMethod,
@@ -13,12 +13,12 @@ else{
         shippingPrice:req.body.shippingPrice,
        user:req.user._id
     })
-    const createdOrder= await order.save();
+    const createdOrder= order.save();
     res.status(201).send({order:createdOrder,message:"Order Created"})
 }
 }
 
-exports.Orders=async=(req,res)=>{
+const getOrders =async(req,res)=>{
     const email= req.body.email;
 const orders=await  Order.find(email);
 try {
@@ -27,3 +27,5 @@ try {
    res.send(error)
 }
 }
+
+module.exports={createOrder,getOrders}
